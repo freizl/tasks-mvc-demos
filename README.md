@@ -21,3 +21,27 @@ Case One: an complex form that visibility of some fields depend on other fields'
   - Elm
   - etc...
 
+## Design
+
+```{.haskell}
+data Task = Task 
+  { Name :: String
+  , Description :: String
+  , Priority :: Number
+  , Deadline :: Date
+  , Send text message :: Boolean
+  , Tag :: [String]
+  , Story Point :: Number
+  }
+  
+```
+
+```
+/tasks/   GET
+/task/:id GET
+/task/:id POST
+/task/:id PUT
+/task/:id DELETE
+```
+
+
