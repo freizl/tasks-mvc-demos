@@ -1,2 +1,1 @@
-# tasks-mvc-demos
-try various mvc framework or re-invent the wheel
+[notes & draft ideas](https://docs.google.com/drawings/d/1ceDaqPI6AMKoHc--qio_W8lTkX_OHU85sOYhfljvCNI/edit?usp=sharing)
