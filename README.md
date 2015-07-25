@@ -23,19 +23,6 @@ Case One: an complex form that visibility of some fields depend on other fields'
 
 ## Design
 
-```{.haskell}
-data Task = Task 
-  { Name :: String
-  , Description :: String
-  , Priority :: Number
-  , Deadline :: Date
-  , Send text message :: Boolean
-  , Tag :: [String]
-  , Story Point :: Number
-  }
-  
-```
-
 ```
 /tasks/   GET
 /task/:id GET
@@ -43,5 +30,21 @@ data Task = Task
 /task/:id PUT
 /task/:id DELETE
 ```
+
+```{.haskell}
+data Task = Task 
+  { Name :: String
+  , Description :: String
+  , Priority :: Number
+  , Deadline :: Date
+  , SendTextMessage :: Boolean
+  , Tag :: [String]
+  , StoryPoint :: Number
+  }
+  
+data Priority = High | Medium | Low
+  
+```
+
 
 
