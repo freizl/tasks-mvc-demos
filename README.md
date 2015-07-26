@@ -34,14 +34,14 @@ Case One: an complex form that visibility of some fields depend on other fields'
 
 ```{.haskell}
 data Task = Task
-  { Name :: String
-  , Description :: String
-  , Priority :: Number
-  , Deadline :: Date
+  { Name            :: String
+  , Description     :: String
+  , Priority        :: Number
+  , Deadline        :: Date
   , SendTextMessage :: Boolean
-  , PhoneNumber :: Maybe String
-  , Tag :: [String]
-  , StoryPoint :: Number
+  , PhoneNumber     :: Maybe String
+  , Tag             :: [String]
+  , StoryPoint      :: Number
   }
 
 data Priority = High | Medium | Low
