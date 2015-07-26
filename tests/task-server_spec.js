@@ -70,6 +70,13 @@ describe('API - Task Service', function () {
 
   });
 
+  it('shall throw when delete none existing task', function () {
+    assert['throw'](function () {
+      service.del("none-exists-task-id");
+    });
+
+  });
+
   function createTask(name) {
     name = name || 'Task1';
     return {

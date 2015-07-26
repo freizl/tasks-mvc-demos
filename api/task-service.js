@@ -1,3 +1,7 @@
+/**
+ * TODO: validation when add/update.
+ */
+
 var uuid = require('node-uuid'),
     R = require('ramda');
 
@@ -13,11 +17,8 @@ var t = {
     return R.find(R.propEq('id', id))(this.tasks);
   },
 
-  /**
-   * TODO:
-   * 1. validation
-   */
   add: function (task) {
+    task = this._defaultTask(task);
     task.id = uuid.v4();
     this.tasks.push(task);
     return task;
@@ -25,20 +26,14 @@ var t = {
 
   update: function (task) {
     // dummy updating: delete old one and add the new one.
-    var i = this.del(task.id);
-    if (i >= 0) {
-      this.tasks.push(task);
-    } else {
-      throw new Error('Can not delete task ' + task.id + ' - not found');
-    }
+    this.del(task.id);
+    this.tasks.push(task);
     return task;
   },
 
   del: function (id) {
     var i = this._findTask(id);
-    if (i >= 0) {
-      this.tasks = R.remove(i, i + 1, this.tasks);
-    }
+    this.tasks = R.remove(i, i + 1, this.tasks);
     return i;
   },
 
@@ -47,11 +42,17 @@ var t = {
   },
 
   _findTask: function (id) {
-    return R.findIndex(R.propEq('id', id))(this.tasks);
+    var i = R.findIndex(R.propEq('id', id))(this.tasks);
+
+    if (i < 0) {
+      throw new Error('Can not find task ' + id + ' - not found');
+    }
+
+    return i;
   },
 
   _defaultTask: function (task) {
-    return R.mixin({
+    return R.merge({
       name: 'default Task',
       description: '',
       priority: 3,
