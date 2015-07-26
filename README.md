@@ -39,6 +39,7 @@ data Task = Task
   , Priority :: Number
   , Deadline :: Date
   , SendTextMessage :: Boolean
+  , PhoneNumber :: Maybe String
   , Tag :: [String]
   , StoryPoint :: Number
   }

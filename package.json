@@ -4,7 +4,7 @@
     "description": "[notes & ideas](https:\/\/docs.google.com\/drawings\/d\/1ceDaqPI6AMKoHc--qio_W8lTkX_OHU85sOYhfljvCNI\/edit?usp=sharing)",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": ".\/node_modules\/.bin\/mocha test"
     },
     "repository": {
         "type": "git",
@@ -27,5 +27,9 @@
         "node-uuid": "^1.4.3",
         "ramda": "^0.17.1",
         "restify": "^3.0.3"
+    },
+    "devDependencies": {
+        "chai": "^3.2.0",
+        "mocha": "^2.2.5"
     }
 }
