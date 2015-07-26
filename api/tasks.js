@@ -9,33 +9,39 @@ function success(msg, data) {
 }
 
 function getAllTasks(req, res, next) {
-  var xs = ts.getAllTasks();
-  res.json(success('all tasks', ['a', 'b', 'c']));
+  var xs = ts.all();
+  res.json(success('all tasks', xs));
   return next();
 }
 
 function getTask(req, res, next) {
-  var x = ts.getTask();
-  res.json(success('get one task', ['a']));
+  var id = req.params.id,
+      x = ts.get(id);
+  res.json(success('get one task', x));
   return next();
 }
 
 function addTask(req, res, next) {
-  var x = ts.addTask();
-  res.json(success('add one task', ['a']));
+  var x = ts.add(req.body);
+  res.json(success('add one task', x));
   return next();
 }
 
 function updateTask(req, res, next) {
-  var x = ts.updateTask();
-  res.json(success('update one task', ['a']));
+  var x = ts.update(req.body);
+  res.json(success('update one task', x));
   return next();
 }
 
 function deleteTask(req, res, next) {
-  //ts.deleteTask();
-  res.send(204);
-  res.json(success('delete one task'));
+  var id = req.params.id,
+      index = ts.del(id);
+  if (index >= 0) {
+    res.json(success('delete task', {id: id}));
+    res.send(200);
+  } else {
+    res.send(400, 'Can delete task - not found');
+  }
   return next();
 }
 

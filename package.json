@@ -24,6 +24,8 @@
     },
     "homepage": "https:\/\/github.com\/freizl\/tasks-mvc-demos",
     "dependencies": {
+        "node-uuid": "^1.4.3",
+        "ramda": "^0.17.1",
         "restify": "^3.0.3"
     }
 }
