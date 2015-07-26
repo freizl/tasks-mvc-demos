@@ -1,0 +1,29 @@
+{
+    "name": "tasks-mvc-demos",
+    "version": "1.0.0",
+    "description": "[notes & ideas](https:\/\/docs.google.com\/drawings\/d\/1ceDaqPI6AMKoHc--qio_W8lTkX_OHU85sOYhfljvCNI\/edit?usp=sharing)",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https:\/\/github.com\/freizl\/tasks-mvc-demos.git"
+    },
+    "keywords": [
+        "web",
+        "development",
+        "mvc",
+        "mvp",
+        "mvvm"
+    ],
+    "author": "Haisheng Wu <freizl@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https:\/\/github.com\/freizl\/tasks-mvc-demos\/issues"
+    },
+    "homepage": "https:\/\/github.com\/freizl\/tasks-mvc-demos",
+    "dependencies": {
+        "restify": "^3.0.3"
+    }
+}
