@@ -1,6 +1,6 @@
 // TODO: how to unit test this file?
 
-var ts = require('./task-service');
+var ts = require('./tasks/internal.js');
 
 function success(msg, data) {
   data = data || {};

@@ -32,7 +32,7 @@ var t = {
   },
 
   del: function (id) {
-    var i = this._findTask(id);
+    var i = this._findTaskIndex(id);
     this.tasks = R.remove(i, i + 1, this.tasks);
     return i;
   },
@@ -41,7 +41,7 @@ var t = {
     this.tasks = [];
   },
 
-  _findTask: function (id) {
+  _findTaskIndex: function (id) {
     var i = R.findIndex(R.propEq('id', id))(this.tasks);
 
     if (i < 0) {
@@ -63,6 +63,5 @@ var t = {
     }, task);
   }
 };
-
 
 module.exports = t;
