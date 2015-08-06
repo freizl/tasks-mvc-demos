@@ -1,7 +1,7 @@
 var assert = require('chai').assert,
     R = require('ramda');
 
-var service = require('../api/tasks/internal.js');
+var service = require('../../../api/tasks/internal.js');
 
 describe('API - Task Service', function () {
 
