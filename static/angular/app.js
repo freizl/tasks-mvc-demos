@@ -20,7 +20,7 @@
           redirectTo: '/'
         });
 
-      $locationProvider.hashPrefix('!');
+      //$locationProvider.hashPrefix('!');
 
     }])
 

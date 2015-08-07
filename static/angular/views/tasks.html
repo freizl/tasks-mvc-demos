@@ -14,16 +14,16 @@
     <tbody>
         <tr ng-repeat="task in tasks" class="collection-item">
             <td>
-                <a href="#!/task/{{task.id}}">{{task.name}}</a>
+                <a href="#/task/{{task.id}}">{{task.name}}</a>
             </td>
             <td>
                 <span>{{task.description}}</span>
             </td>
             <td>
-                <a href="#!" class="secondary-content">
+                <a href="#/" class="secondary-content">
                     <i class="material-icons dp48">delete</i>
                 </a>
-                <a href="#!" class="secondary-content">
+                <a href="#/" class="secondary-content">
                     <i class="material-icons dp48">description</i>
                 </a>
             </td>
@@ -39,6 +39,6 @@
         <p>A bunch of text</p>
     </div>
     <div class="modal-footer">
-        <a href="#!/" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+        <a href="#/" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
     </div>
 </div>

@@ -15,9 +15,23 @@
         <script src="./angular/controllers/task.js"></script>
     </head>
     <body>
-        <h2>Tasks - MVC Demos - Angular</h2>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo left">JS</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/angular.html#/">Angular - WIP</a></li>
+                    <li><a href="/backbone.html">Backbone - TODO</a></li>
+                    <li><a href="/elm.html">Elm - TODO</a></li>
+                    <li><a href="/react.html">React - TODO</a></li>
+                    <li><a href="/mva.html">Mics - TODO (Rx.js, TypeScript, etc..)</a></li>
 
-        <div id="main-view" ng-view>
+                </ul>
+            </div>
+        </nav>
 
+        <div id="main">
+            <div id="main-view" ng-view>
+            </div>
+        </div>
     </body>
 </html>
