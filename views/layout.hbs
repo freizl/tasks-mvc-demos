@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{title}}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css" rel="stylesheet">
+    <link href="/stylesheets/main.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+  </head>
+  <body>
+
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo left">MVC</a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/angular">Angular - WIP</a></li>
+            <li><a href="/backbone">Backbone - TODO</a></li>
+            <li><a href="/react">React - TODO</a></li>
+            <li><a href="/mva">Mics - TODO</a></li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/angular">Angular - WIP</a></li>
+            <li><a href="/backbone">Backbone - TODO</a></li>
+            <li><a href="/react">React - TODO</a></li>
+            <li><a href="/mva">Mics - TODO</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <script>
+      $(".button-collapse").sideNav();
+    </script>
+
+    {{{body}}}
+
+  </body>
+</html>
