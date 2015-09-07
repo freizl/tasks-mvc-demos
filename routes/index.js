@@ -8,20 +8,20 @@ var navs = [ {name: 'Angular', value: 'angular'},
            ];
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res) {
   res.render('index', { title: 'MVC Demos', navs: navs });
 });
-router.get('/angular', function(req, res, next) {
-  res.render('angular', { title: 'Angular', navs: navs });
+router.get('/angular', function (req, res) {
+  res.render('angular', { title: 'Angular Demos', navs: navs });
 });
-router.get('/backbone', function(req, res, next) {
-  res.render('backbone', { title: 'Backbone', navs: navs });
+router.get('/backbone', function (req, res) {
+  res.render('backbone', { title: 'Backbone Demos', navs: navs });
 });
-router.get('/react', function(req, res, next) {
-  res.render('react', { title: 'React', navs: navs });
+router.get('/react', function (req, res) {
+  res.render('react', { title: 'React Demos', navs: navs });
 });
-router.get('/mva', function(req, res, next) {
-  res.render('mva', { title: 'MVA', navs: navs });
+router.get('/mva', function (req, res) {
+  res.render('mva', { title: 'MVA Demos', navs: navs });
 });
 
 module.exports = router;

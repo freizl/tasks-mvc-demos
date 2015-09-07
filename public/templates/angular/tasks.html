@@ -1,4 +1,5 @@
 <button class="waves-effect waves-light btn" ng-click="openAddTaskModal()">Add Task</button>
+
 <hr/>
 <table class="bordered responsive-table">
     <caption>
@@ -20,7 +21,7 @@
                 <span>{{task.description}}</span>
             </td>
             <td>
-                <a href="#/" class="secondary-content">
+                <a href="#/" class="secondary-content" ng-click="deleteTask(task.id)">
                     <i class="material-icons dp48">delete</i>
                 </a>
                 <a href="#/" class="secondary-content">
@@ -35,10 +36,50 @@
 <!-- Modal Structure -->
 <div id="add-task-content" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
+        <h4>Create an Task</h4>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="name" type="text" class="validate" ng-model="task.name">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="description" type="text" class="validate" ng-model="task.description">
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select class="browser-default" name="priority" ng-model="task.priority">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select>
+                        <!-- <label for="priority">priority</label> -->
+                    </div>
+                    <div class="input-field col s6">
+                        <!-- <label for="deadline">Deadline</label> -->
+                        <input id="deadline" type="date" class="validate datepicker" ng-model="task.deadline">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="sendTextMessage" type="checkbox" class="validate filled-in" ng-model="task.sendTextMessage">
+                        <label for="sendTextMessage">Send Text Message</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="storyPoint" type="number" class="validate" ng-model="task.storyPoint">
+                        <label for="storyPoint">Story point</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
     </div>
     <div class="modal-footer">
-        <a href="#/" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+        <a href="#/" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+        <a class="modal-action waves-effect waves-green btn-flat" ng-click="createTask()">Save</a>
     </div>
 </div>

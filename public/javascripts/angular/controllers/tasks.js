@@ -1,20 +1,35 @@
-/* global angular:false */
+/* global angular:false, $:false */
 
 (function (angular, $) {
   'use strict';
 
   angular.module('mvcDemo')
-    .controller('TasksCtrl', ['$scope', function ($scope, guaService) {
+    .controller('TasksCtrl', ['$scope', 'guaService', function ($scope, guaService) {
 
-      $scope.tasks = [
-        {id: 111, name: 11111, description: 11111},
-        {id: 222, name: 22222, description: 11111},
-        {id: 333, name: 33333, description: 11111}
-      ];
-
+      function init() {
+        guaService.getAllTasks()
+          .then(function (resp) {
+            $scope.tasks = resp;
+          });
+      }
       $scope.openAddTaskModal = function () {
         $('#add-task-content').openModal();
       };
+
+      $scope.createTask = function () {
+        guaService.createTask($scope.task)
+          .then(function (task) {
+            $('#add-task-content').closeModal();
+            $scope.tasks.push(task);
+          });
+      };
+
+      $scope.deleteTask = function (id) {
+        guaService.deleteTask(id)
+          .then(init); // TODO: rm items from $scope.tasks
+      };
+
+      init();
 
     }]);
 

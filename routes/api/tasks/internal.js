@@ -1,7 +1,3 @@
-/**
- * TODO: validation when add/update.
- */
-
 var uuid = require('node-uuid'),
     R = require('ramda');
 
